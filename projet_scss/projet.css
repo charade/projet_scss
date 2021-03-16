@@ -1,0 +1,134 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+}
+
+.banner-wrapper {
+  width: 100%;
+  padding: 3% 1% 1% 5%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.514);
+}
+
+.banner {
+  height: 94vh;
+  overflow: hidden;
+  color: white;
+  background-image: url("../loopstudios-landing-page/images/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.banner nav {
+  width: 100%;
+}
+.banner h1 {
+  padding: 3%;
+  width: 35%;
+  border: 1px solid rgba(255, 255, 255, 0.886);
+  font-size: 3.5rem;
+  margin-top: 3.5%;
+  margin-left: 1.4%;
+  font-weight: 300;
+}
+
+.links {
+  position: relative;
+  display: flex;
+  height: 100px;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+.links li {
+  margin-left: 2%;
+}
+.links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+.links li a.active {
+  margin-right: 3%;
+  position: relative;
+}
+.links li a.active::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 0px;
+  height: 2.5px;
+  background: black;
+  transition: 0.2s;
+}
+.links li a.active:hover::before {
+  width: 20px;
+}
+.links li.display-start {
+  position: absolute;
+  left: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vr-wrapper {
+  position: relative;
+  width: 85%;
+  height: 50%;
+  margin-bottom: 8%;
+}
+.vr-wrapper img {
+  width: 70%;
+}
+.vr-wrapper figcaption {
+  border: 3px solid black;
+  padding: 8%;
+  width: 28.3333333333%;
+  height: 50%;
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+
+.creations-block {
+  z-index: 2;
+  width: 85%;
+}
+.creations-block header {
+  display: flex;
+  justify-content: space-between;
+}
+.creations-block #figures-categories {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.creations-block #figures-categories figure {
+  position: relative;
+  height: 100%;
+  width: 18%;
+}
+.creations-block #figures-categories figure img {
+  width: 100%;
+}
+.creations-block #figures-categories figure figcaption {
+  position: absolute;
+  top: 70%;
+  color: white;
+  font-size: 1.6rem;
+}
+
+footer {
+  color: white;
+  background-color: black;
+}
+
+/*# sourceMappingURL=projet.css.map */
