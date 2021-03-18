@@ -1,3 +1,22 @@
+@media screen and (max-width: 980px) {
+  .content-wrapper {
+    padding-left: 15vw;
+  }
+
+  .main-link-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vr-wrapper figcaption {
+    position: static !important;
+    border: 3px solid red;
+    margin-left: 50px;
+  }
+  .vr-wrapper .creations-visit-options {
+    margin-top: 17vw;
+  }
+}
 html {
   font-size: 62.5%;
 }
@@ -30,7 +49,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   align-items: flex-start;
 }
 .banner nav ul {
@@ -71,15 +89,15 @@ body {
   height: 230px;
   border: 1px solid rgba(255, 255, 255, 0.886);
   font-size: 3.5rem;
-  margin-top: 100px;
+  margin-top: 12rem;
   width: 42%;
-  height: 150px;
+  height: 15rem;
   font-weight: 300;
 }
 
 .logo {
   width: 18%;
-  height: 35px;
+  height: 3.5rem;
 }
 
 .content-wrapper {
@@ -93,18 +111,20 @@ body {
 .vr-wrapper {
   position: relative;
   width: 85%;
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 .vr-wrapper img {
   width: 70%;
 }
 .vr-wrapper figcaption {
-  background: white;
-  padding: 8%;
-  width: 24.2857142857%;
   position: absolute;
   top: 40%;
   left: 55%;
+  background: white;
+  padding: 5%;
+  margin: 3rem;
+  font-size: 3em;
+  width: 24.2857142857%;
 }
 
 .creations-visit-options {
@@ -116,7 +136,7 @@ body {
   font-size: 2rem;
 }
 .creations-visit-options button {
-  height: 60px;
+  height: 6rem;
   width: 18%;
 }
 
@@ -139,7 +159,7 @@ body {
 #figures-categories figure figcaption {
   position: absolute;
   top: 70%;
-  left: 1%;
+  left: 1;
   color: white;
   width: 50px;
   font-size: 1.3em;

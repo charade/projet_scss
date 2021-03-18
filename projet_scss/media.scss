@@ -1,5 +1,23 @@
- @media screen and(min-width:800px){
-    ul{
-        // margin-right :10%;
+@import './mixin.scss';
+ @media screen and(max-width:980px){
+
+    .content-wrapper{
+        padding-left : 15vw;
     }
+    .main-link-box{
+         flex-direction: column;
+         align-items : center;
+    }
+
+    .vr-wrapper{
+        figcaption{
+            position : check_screen(false) !important;
+            border:3px solid red;
+            margin-left : 50px;
+        }
+    .creations-visit-options{
+            margin-top : 17vw;
+        
+    }
+}
  }

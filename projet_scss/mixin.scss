@@ -13,7 +13,6 @@ $content_width : 85%;
 
 //set le filter sombre sur la bannière
 @mixin banner_content_wrapper_set_up{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,8 +29,16 @@ $content_width : 85%;
     padding-left : 10%;
 }
 //met un élément en absolute
-@mixin set_absolute_position($top,$left){
-    position : absolute;
+@function check_screen($a){
+    @if($a == true){
+        @return absolute;
+    } 
+    @else{
+        @return static;
+    }
+}
+@mixin set_position($top,$left,$a){
+    position : check_screen($a);
     top : $top;
     left : $left;
 }
@@ -73,7 +80,7 @@ $content_width : 85%;
                     &.active{
                                 position  : relative;
                                 &::before{
-                                        @include set_absolute_position(100%,50%);
+                                        @include set_position(100%,50%,true);
                                         transform: translateX(-50%);
                                         content:'';
                                         @include width_height_set_up(30px,0);
@@ -88,5 +95,9 @@ $content_width : 85%;
             }
         }
     }
+//mixin media queries
+@mixin responsive{
+    top : 100%;
+    left:0;
+}
 
-//margin ou padding des éléments
