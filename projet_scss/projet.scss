@@ -1,4 +1,21 @@
+@font-face {
+    font-family: "Alata";
+    src: url(./fonts/Alata-Regular.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    font-style: normal;
+    font-weight: 300;
+    src: url(./fonts/JosefinSans.ttf);
+  }
+
+/* ------------------------------------------------------------------------- */
+
 $content_width : 85%;
+
 @mixin set_width_and_height($a,$b){
     width: $a;
     height : $b;
@@ -15,48 +32,60 @@ body{
     margin: 0;
     padding: 0;
     // height : 80vh;
-    border : 3px solid red;
 }
 .banner-wrapper{
     @include set_width_and_height(100%,100%);
-    // padding : 2%;
     background: rgba(0, 0, 0, 0.623);
-}
-.banner{
-    height : 80vh;
-    overflow: hidden;
-    color:white;
-    background-image: url('../loopstudios-landing-page/images/desktop/image-hero.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    nav{
-        width:100%;
-        padding-right:5%;
-    }
-    h1{
+    padding-top: 5%;
+    padding-left: 8%;
+
+    h1  {
         padding:3%;
         width : 35%;
         border : 1px solid rgba(255, 255, 255, 0.886);
         font-size : 3.5rem;
+        color: white;
         margin-top : 3.5%;
-        margin-left: 1.4%;
-        font-weight : 300;
+        font-family: JosefinSans;
+        font-weight: initial;
+        font-size: 5rem;
     }
+
+}
+.banner{
+    overflow: hidden;
+    background-image: url('../loopstudios-landing-page/images/desktop/image-hero.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 80vh;
+        
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-bottom: 8%;
+        
+        img {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+
 }
 .links{
-        position: relative;
-        margin : 5%;
-        display:flex;
-        height : 100px;
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
         list-style-type: none;
-        justify-content: flex-end;
+        cursor: pointer;
+
         li{
-            margin-left : 2%;
+            font-family: JosefinSans;
+            font-size : 2rem;
             a{
                 text-decoration: none;
                 color : white;
-                font-size : 1.7rem;
                 &.active{
                             margin-right : 3%;
                             position  : relative;
@@ -87,13 +116,27 @@ body{
     @include set_width_and_height($content_width,50%);
     margin-bottom : 8%;
     img{
-        width:70%;
+        width:60%;
     }
+    /* voir */
     figcaption{
         background : white;
-        padding: 8%;
-        @include set_width_and_height($content_width/3, 50%);
-        @include set_absolute_position(40%, 55%);
+        padding: 5%;
+        /* @include set_width_and_height($content_width/4, 50%);*/
+        @include set_absolute_position(35%, 47%);
+
+            h2 {
+                font-family: JosefinSans;
+                font-weight: initial;
+                font-size: 4rem;
+                line-height: 4rem;
+            }
+            p {
+                font-family: Alata;
+                font-weight: 400;
+                font-size: 1.5rem;
+                color: gray;
+                }
     }
 }
 .creations-visit-options{
@@ -101,32 +144,104 @@ body{
     width : $content_width;
     display: flex;
     justify-content: space-between;
-    border:3px solid magenta;
-    font-size : 2rem;
+    align-items: center;
+        h2 {
+            font-family: JosefinSans;
+            font-weight: initial;
+            font-size: 4rem;
+            line-height: 4rem;
+            }
+        button {
+            border: 1px solid gray;
+            font-size: 1.5rem;
+            font-family: JosefinSans;
+            color: grey;
+            letter-spacing: 0.5rem;
+            background-color: white;
+            width: 17rem;
+            height: 5rem;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            &:hover {
+                border: none;
+                color:white;
+                letter-spacing: 0.5rem;
+                background-color:black;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            }
 }
 #figures-categories{
     width : $content_width;
-    margin: 4%;
-    display:flex;
-    flex-wrap : wrap;
-    figure{
-        position :relative;
-        width : 23%;
-        margin-left: -1.7%;
-        margin-bottom : 1%;
-        img{
-            width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    
+    figure {
+        position: relative;
+        width: 20%;
+        margin-left: 0px;
+        margin-bottom: 1%;
+        margin-top: 0px;
+
+        &:hover {
+            opacity: 30%;
+            transition-duration: 0.4s;
+            cursor: pointer;
         }
-        figcaption{
+
+        figcaption {
             @include set_absolute_position(70%,1%);
-            color : white;
+            color: white;
             font-size : 1.4em;
+            
+            &:hover {
+                color: black;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+
+            h4 {
+                font-family: JosefinSans;
+                font-weight: initial;
+                font-size: 3.3rem;
+                margin: 20px;
+            }
         }
     }
 }
-footer{
-    @include set_width_and_height(100%,350px);
+footer {
+    @include set_width_and_height(100%,190px);
     color : white;
     background-color: black;
-}
+    padding-top: 1%;
+    margin-bottom: 0px;
+    
+    div {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2%;
+        margin-right: 8%;
 
+        .links {
+            justify-content: space-around;
+            margin-left: 3%;
+        }
+        .logos {
+            width: 20%;
+        }
+        p{
+            font-size: 1.6rem;
+            font-family: Alata;
+            color: grey;
+        }
+    }
+
+    img {
+        margin-left: 8%;
+        height: 100%;
+    }
+
+}
