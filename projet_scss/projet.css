@@ -5,86 +5,95 @@ html {
 body {
   margin: 0;
   padding: 0;
-  border: 3px solid red;
 }
 
-.banner-wrapper {
+.banner-content-wrapper {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.623);
+  background: rgba(0, 0, 0, 0.406);
+  padding-top: 5%;
+  padding-left: 10%;
 }
 
 .banner {
   height: 80vh;
-  overflow: hidden;
+  padding: 0;
   color: white;
   background-image: url("../loopstudios-landing-page/images/desktop/image-hero.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  overflow: hidden;
+  height: 90vh;
 }
 .banner nav {
   width: 100%;
-  padding-right: 5%;
-}
-.banner h1 {
-  padding: 3%;
-  width: 35%;
-  border: 1px solid rgba(255, 255, 255, 0.886);
-  font-size: 3.5rem;
-  margin-top: 3.5%;
-  margin-left: 1.4%;
-  font-weight: 300;
-}
-
-.links {
-  position: relative;
-  margin: 5%;
   display: flex;
-  height: 100px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-items: flex-start;
+}
+.banner nav ul {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 10%;
+  width: 40%;
   list-style-type: none;
-  justify-content: flex-end;
 }
-.links li {
-  margin-left: 2%;
+.banner nav ul li {
+  margin-right: 7%;
 }
-.links li a {
+.banner nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 }
-.links li a.active {
-  margin-right: 3%;
+.banner nav ul li a.active {
   position: relative;
 }
-.links li a.active::before {
+.banner nav ul li a.active::before {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   content: "";
-  width: 0;
-  height: 2.8px;
+  width: 30px;
+  height: 0;
   background: white;
   transition: 0.1s;
 }
-.links li a.active:hover::before {
-  width: 30px;
+.banner nav ul li a.active:hover::before {
+  height: 3px;
+}
+.banner h1 {
+  padding: 2%;
+  width: 50%;
+  height: 230px;
+  border: 1px solid rgba(255, 255, 255, 0.886);
+  font-size: 3.5rem;
+  margin-top: 100px;
+  width: 42%;
+  height: 150px;
+  font-weight: 300;
+}
+
+.logo {
+  width: 18%;
+  height: 35px;
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 130px;
+  margin-bottom: 8%;
 }
 
 .vr-wrapper {
   position: relative;
   width: 85%;
-  height: 50%;
-  margin-bottom: 8%;
+  margin-bottom: 100px;
 }
 .vr-wrapper img {
   width: 70%;
@@ -92,8 +101,7 @@ body {
 .vr-wrapper figcaption {
   background: white;
   padding: 8%;
-  width: 28.3333333333%;
-  height: 50%;
+  width: 24.2857142857%;
   position: absolute;
   top: 40%;
   left: 55%;
@@ -101,23 +109,28 @@ body {
 
 .creations-visit-options {
   z-index: 2;
-  width: 85%;
+  width: 80vw;
+  margin-right: 3%;
   display: flex;
   justify-content: space-between;
-  border: 3px solid magenta;
   font-size: 2rem;
+}
+.creations-visit-options button {
+  height: 60px;
+  width: 18%;
 }
 
 #figures-categories {
-  width: 85%;
-  margin: 4%;
+  width: 90%;
+  margin-top: 4%;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 #figures-categories figure {
   position: relative;
-  width: 23%;
-  margin-left: -1.7%;
+  width: 21%;
+  margin-right: -20px;
   margin-bottom: 1%;
 }
 #figures-categories figure img {
@@ -128,14 +141,78 @@ body {
   top: 70%;
   left: 1%;
   color: white;
-  font-size: 1.4em;
+  width: 50px;
+  font-size: 1.3em;
 }
 
 footer {
-  width: 100%;
-  height: 350px;
   color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  font-size: 1.8rem;
+  height: 180px;
+  padding-left: 100px;
+  padding-right: 150px;
+  padding-top: 2%;
   background-color: black;
+  overflow: hidden;
+}
+footer ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+  width: 40%;
+  list-style-type: none;
+}
+footer ul li {
+  margin-right: 2%;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.9rem;
+}
+footer ul li a.active {
+  position: relative;
+}
+footer ul li a.active::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 30px;
+  height: 0;
+  background: white;
+  transition: 0.1s;
+}
+footer ul li a.active:hover::before {
+  height: 3px;
+}
+footer .footer-flex-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+}
+footer .footer-flex-box .links {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0;
+  width: 40%;
+  margin-right: 0;
+}
+footer .footer-flex-box p {
+  font-size: 1.3rem;
+}
+footer .footer-flex-box .footer-links {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=projet.css.map */

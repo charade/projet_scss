@@ -1,118 +1,75 @@
-$content_width : 85%;
-@mixin set_width_and_height($a,$b){
-    width: $a;
-    height : $b;
-}
-@mixin set_absolute_position($top,$left){
-    position : absolute;
-    top : $top;
-    left : $left;
-}
+@import'./mixin.scss';
 html{
     font-size: 62.5%;
 }
 body{
     margin: 0;
     padding: 0;
-    // height : 80vh;
-    border : 3px solid red;
 }
-.banner-wrapper{
-    @include set_width_and_height(100%,100%);
-    // padding : 2%;
-    background: rgba(0, 0, 0, 0.623);
+.banner-content-wrapper{
+    @include add_filter;
 }
+
 .banner{
-    height : 80vh;
-    overflow: hidden;
-    color:white;
-    background-image: url('../loopstudios-landing-page/images/desktop/image-hero.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+    @include banner_set_up;
+    height : 90vh;
     nav{
-        width:100%;
-        padding-right:5%;
+        @include display_content_inline_set_up(space-between);
+        align-items: flex-start;
+        @include display_list_set_up(flex-start,7%);
     }
     h1{
-        padding:3%;
-        width : 35%;
+        padding:2%;
+        @include width_height_set_up(50%, 230px);
         border : 1px solid rgba(255, 255, 255, 0.886);
         font-size : 3.5rem;
-        margin-top : 3.5%;
-        margin-left: 1.4%;
+        margin-top : 100px;
+        width : 42%;
+        height: 150px;
         font-weight : 300;
     }
 }
-.links{
-        position: relative;
-        margin : 5%;
-        display:flex;
-        height : 100px;
-        list-style-type: none;
-        justify-content: flex-end;
-        li{
-            margin-left : 2%;
-            a{
-                text-decoration: none;
-                color : white;
-                font-size : 1.7rem;
-                &.active{
-                            margin-right : 3%;
-                            position  : relative;
-                            &::before{
-                                @include set_absolute_position(100%,50%);
-                                    transform: translateX(-50%);
-                                    content:'';
-                                    @include set_width_and_height(0,2.8px);
-                                    background :white;
-                                    transition : 0.1s;
-                                }
-                            &:hover::before{
-                                    width : 30px;
-                                }
-                        }
-            }
-        }
+
+.logo{
+    @include width_height_set_up(18%,35px);
 }
 .content-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:10%;
-    margin-bottom : 10%;
+    @include banner_content_wrapper_set_up;
 }
 .vr-wrapper{
     position:relative;             
-    @include set_width_and_height($content_width,50%);
-    margin-bottom : 8%;
+    width : 85%;
+    margin-bottom : 100px;
     img{
         width:70%;
     }
     figcaption{
         background : white;
         padding: 8%;
-        @include set_width_and_height($content_width/3, 50%);
+        width : $content_width/3.5;
         @include set_absolute_position(40%, 55%);
     }
 }
 .creations-visit-options{
     z-index:2;
-    width : $content_width;
-    display: flex;
-    justify-content: space-between;
-    border:3px solid magenta;
+    width : 80vw;
+    margin-right : 3%;
+    @include display_flex_set_up(space-between);
     font-size : 2rem;
+    button{
+        height : 60px;
+        width : 18%;
+    }
 }
 #figures-categories{
-    width : $content_width;
-    margin: 4%;
-    display:flex;
+    width : 90%;
+    margin-top: 4%;
+    @include display_flex_set_up(flex-start);
     flex-wrap : wrap;
     figure{
         position :relative;
-        width : 23%;
-        margin-left: -1.7%;
+        width : 21%;
+        margin-right: -20px;
         margin-bottom : 1%;
         img{
             width:100%;
@@ -120,13 +77,40 @@ body{
         figcaption{
             @include set_absolute_position(70%,1%);
             color : white;
-            font-size : 1.4em;
+            width : 50px;
+            font-size : 1.3em;
         }
     }
 }
 footer{
-    @include set_width_and_height(100%,350px);
     color : white;
+    @include display_flex_set_up(space-around);
+    flex-direction: column;
+    font-size: 1.8rem;
+    height : 180px;
+    padding-left:100px;
+    padding-right : 150px;
+    padding-top : 2%;
     background-color: black;
+    overflow: hidden;
+    @include display_list_set_up(flex-end,2%);
+
+    .footer-flex-box{
+        @include display_content_inline_set_up(space-between);
+        padding:0;
+    .links{
+        @include display_content_inline_set_up(flex-end);
+        padding:0;
+        width : 40%;
+        margin-right:0;
+    }    
+        p{
+            font-size:1.3rem;
+        }
+        .footer-links{
+            padding:0;
+            @include display_flex_set_up(space-between);
+        }
+    }
 }
 
