@@ -1,0 +1,57 @@
+$content_width : 85%;
+@import './header.scss';
+@import './content.scss';
+@import './footer.scss';
+///////////////////////////////////header ////////////////////
+
+///////////////////////////////// content ////////////////////
+
+///////////////////////////////// footer /////////////////////
+
+/*
+*/
+@mixin width_height_set_up($a,$b){
+    width : $a;
+    height : $b
+}
+/*
+*/
+@mixin display_flex_set_up($justify_content){
+    display:flex ; 
+    justify-content: $justify_content;
+}
+/*
+*/
+@mixin set_absolute_position($top, $left){
+    position : absolute;
+    top : $top;
+    left : $left;
+}
+/*
+  souligne tous les liens du document
+*/
+.active{
+    position: relative;
+    &::before{
+        position :absolute;
+        content: '';
+        @include set_absolute_position(100%, 50%);
+        transform : translateX(-50%);
+        @include width_height_set_up(0, 0);
+        background: white;
+        transition : 0.3s;
+    }
+    &:hover::before{
+        @include width_height_set_up(30px, 3px);
+    }
+}
+/*
+*/
+a{
+    text-decoration : none;
+    color:white;
+}
+
+ul{
+    list-style: none;
+}

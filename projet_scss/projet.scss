@@ -1,122 +1,52 @@
-@import'./mixin.scss';
+@import'./mixin_lib.scss';
 @import './media.scss';
+@import'./fonts-set_up.scss';
+
 html{
     font-size: 62.5%;
 }
 body{
     margin: 0;
     padding: 0;
-}
-.banner-content-wrapper{
-    @include add_filter;
+    overflow-x: hidden;
+    color : white;
 }
 
 .banner{
     @include banner_set_up;
-    height : 90vh;
-    nav{
-        @include display_content_inline_set_up(space-between);
-        @include display_list_set_up(flex-start,7%);
-    }
-    h1{
-        padding:2%;
-        @include width_height_set_up(50%, 230px);
-        border : 1px solid rgba(255, 255, 255, 0.886);
-        font-size : 3.5rem;
-        margin-top : 12rem;
-        width : 42%;
-        height: 15rem;
-        font-weight : 300;
-    }
+    @include add-dark-filter-to-banner;
 }
 
-.logo{
-    @include width_height_set_up(18%,3.5rem);
-}
-.content-wrapper{
-    @include banner_content_wrapper_set_up;
-}
-.vr-wrapper{
-    position:relative;             
-    width : 85%;
-    margin-bottom : 10rem;
-    img{
-        width:70%;
+///tous les élements 
+.main-content-wrapper{
+    @include main_content_wrapper_set_up;
+    // border: 2px solid red;
+    .vr-section-wrapper{
+        @include vr_section_set_up;
     }
-    figcaption{
-        @include set_position(40%, 55%,true);
-        // position:absolute;
-        // top:40%;
-        // left:55%;
-        background : white;
-        padding: 5%;
-        margin : 3rem;
-        font-size : 3em;
-        width : $content_width/3.5;
+
+    .our-section-creations-wrapper{
         
-    }
-}
-.creations-visit-options{
-    z-index:2;
-    width : 80vw;
-    margin-right : 3%;
-    @include display_flex_set_up(space-between);
-    font-size : 2rem;
-    button{
-        height : 6rem;
-        width : 18%;
-    }
-}
-#figures-categories{
-    width : 90%;
-    margin-top: 4%;
-    @include display_flex_set_up(flex-start);
-    flex-wrap : wrap;
-    figure{
-        position :relative;
-        width : 21%;
-        margin-right: -20px;
-        margin-bottom : 1%;
-        img{
-            width:100%;
+        @include our_creations_wrapper_set_up;
+        //correspond au div avec le bouton
+        .our-creations-visit-options{
+           @include div_with_button_set_up;
         }
-        figcaption{
-            @include set_position(70%,1,true);
-            color : white;
-            width : 50px;
-            font-size : 1.3em;
+        .figures-categories-section{
+            @include figures_categories_section_set_up;
         }
     }
 }
+//////////////////////////////:::::::::::::::::::::::::::::::::::::::::::::::
 footer{
-    color : white;
-    @include display_flex_set_up(space-around);
-    flex-direction: column;
-    font-size: 1.8rem;
-    height : 180px;
-    padding-left:100px;
-    padding-right : 150px;
-    padding-top : 2%;
-    background-color: black;
-    overflow: hidden;
-    @include display_list_set_up(flex-end,2%);
-
-    .footer-flex-box{
-        @include display_content_inline_set_up(space-between);
-        padding:0;
-    .links{
-        @include display_content_inline_set_up(flex-end);
-        padding:0;
-        width : 40%;
-        margin-right:0;
-    }    
+        color:white;
+        background: #000;
+        @include display-elements-on-footer;
         p{
-            font-size:1.3rem;
-        }
-        .footer-links{
-            padding:0;
-            @include display_flex_set_up(space-between);
+            color : rgba(255, 255, 255, 0.5);
+            text-align : right;
         }
     }
-}
+
+
 

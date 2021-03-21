@@ -1,0 +1,78 @@
+@mixin main_content_wrapper_set_up{
+    // @include display_flex_set_up(space-between);
+    padding-top : 15rem;
+    margin-bottom : 10%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction : column;
+    padding-left : 6%;
+    margin :0;
+    & >*{
+        width : 60%;
+    }
+}
+@mixin vr_section_set_up{
+position : relative;
+img{
+    // width : 80%;
+}
+figcaption{
+   @include set_absolute_position(40%, 80%);
+    background-color: white;
+    width : 74%;
+    height : 42vh;
+    @include display_flex_set_up(center);
+    flex-direction: column;
+    h2{
+        font-size : 4rem;
+        width : 90%;
+        text-align: center;;
+    }
+    p{
+        text-align:center;
+        width : 90%;
+    }
+}
+}
+
+@mixin our_creations_wrapper_set_up{
+    padding : 2% 2% 0  ;
+    margin-top : 4%;
+    ////
+    margin-bottom : 10% ;
+    width : 90%;
+    @include display_flex_set_up(center);
+    flex-direction : column;
+    &>*{
+        width : 100%;
+    }
+}
+@mixin div_with-button_set_up{
+    @include display_flex_set_up(space-between);
+    align-items:center;
+    button{
+        margin-right : 2%;
+        width : 15rem;
+        height : 4rem;
+    }
+}
+
+@mixin figures_categories_section_set_up{
+   
+    padding : 0.2%;
+    @include display_flex_set_up(flex-start);
+    flex-wrap : wrap;
+    &>*{
+        position : relative;
+        
+        width : 20%;
+        margin : 0 4.7% 1% 0.2% !important;
+        // margin-top : -0.2%;
+        // margin-left : 0; 
+        // margin-right:4.7%;
+
+        figcaption{
+            @include set_absolute_position(60%, 1%);
+        }
+    }
+}

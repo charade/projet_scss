@@ -1,0 +1,35 @@
+@mixin display-elements-on-footer{
+    padding : 3% ;
+
+    @include display_flex_set_up(flex-start);
+
+    flex-flow : row wrap;
+
+    &>*:first-child{
+        max-width : 130px;
+        height:25px; 
+ }
+    
+    & >*:nth-child(2){
+        @include display_flex_set_up(flex-end);
+        li{
+            margin-left : 4%;
+        }
+    } 
+    & >*:nth-child(3){
+        @include display_flex_set_up(flex-start);
+        padding-left:0;
+        list-style: none;
+        li{
+            margin-right:5%;
+            width :100%;
+            font-size : 1.8rem;
+        }
+    }
+    & >*{
+        margin-left : 10%;
+        margin-right : 15%;
+        align-items: center;
+        flex:1;
+    }
+}
