@@ -1,4 +1,8 @@
 @import './media.scss';
+
+/*
+@mixins de tous les éléments d'entête
+*/
 @mixin banner_set_up{
     height : 80vh;
     padding:0;
@@ -19,18 +23,17 @@
         position : relative;
         ////mets un filtre sombre à la bannière
         background-color: rgba(0, 0, 0, 0.66);
-        padding-bottom : 10%;
+        padding: 10rem 5rem 10% 20rem;
         //// met le div en display flex;
         @include display_flex_set_up(space-between);
-        // align-items:center;///////////////////////////////
+        // align-items:baseline;///////////////////////////////
         flex-wrap :wrap;
-        //////tous les enfants directs
-
+////////////////////////////tous les enfants directs du wrapper/////////////////////////////////////
         ////logo/////
         &>*:first-child{
             max-width : 180px;
             height:34px; 
-            z-index:10;
+            z-index:20;
         }
         ////svg icone menu burger
         &>*:nth-child(2){
@@ -39,6 +42,8 @@
             left :80%;
             z-index:10;
             display: none;
+            box-shadow: 0 0 1px #111;
+            background: transparent;
         }
  ///-check-box qui permet d'afficher le menu--//
         &>*:nth-child(3){
@@ -54,36 +59,28 @@
                 opacity:1;
             }
         }
+        ////tous les enfants directes
         & > * {
-            margin-left : 10%;
-            margin-right : 15%;
-            align-items: baseline;
+            align-items: flex-start;
             flex:1;
-            width : 30%;
         }
-
         nav{
-            -webkit-transition : 1s;
+            width : 40%;
+            margin-left : 300px;
+            -webkit-transition : 1s ease-in-out;
             transition : 1s ease-in-out;
             ul{
-                @include display_flex_set_up(space-between);
+                @include display_flex_set_up(space-around);
                 li{
-                    margin-right:8%;
+                    margin-right:6%;
                     width :100%;
                     font-size : 1.8rem;
                 }
             }
         }
-        /////////// correspond au h1///////////
-        &>h1:nth-child(3){
-            border : thin solid white;
-            margin-top : -200px !important;
-            height : 1px ;
-            max-width : 3px !important;
-        }
+       
     }
 }
 
-//////////////////////mobile screen///////////////
 
 

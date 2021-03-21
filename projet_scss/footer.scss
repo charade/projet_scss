@@ -1,6 +1,7 @@
+
 @mixin display-elements-on-footer{
     padding : 3% ;
-
+    max-height : 70vh !important;
     @include display_flex_set_up(flex-start);
 
     flex-flow : row wrap;

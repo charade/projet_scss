@@ -2,31 +2,34 @@
 /////////////:header////////
     .banner{
             min-height:100vh;
-
             .banner-content-wrapper-dark-fiter{
                                                 padding: 17.5% 20% 0 7%;
                                                 flex-direction: column;
                                                 // justify-content: space-between!important;
-                                                align-items: flex-start !important;
-
+                                                // align-items: flex-start !important;
                                                 &>img.logo{
-                                                            margin-left: 0;
+                                                            z-index: 20;
+                                                            position:absolute;
+                                                            left:2%;
+                                                            top:13%;
                                                             margin-bottom: 150px;
                                                             max-width : 30% !important;
                                                             max-height : 30px !important;
                                                         }
-                                                h1.title:first-of-type{
+                                                ////h1///////        
+                                                &>*.title:nth-child(n){
 
                                                                         position : absolute;
                                                                         top:50%;
-                                                                        left:30%;
+                                                                        left:50%;
+                                                                        max-width : 80%;
                                                                         transform: translate(-50%,-50%);
-                                                                        min-width:80vw ;
+                                                                        font-size: 4rem;
                                                                     }
+                                                ////icone du menu burger////                    
                                                 svg{
                                                     display: block !important;
                                                 }
-                                
                             }
     }   
 
@@ -34,11 +37,11 @@
         opacity: 0;
         padding:5% ;
         height : 100vh;
-        position:absolute;
+        position:fixed;
         z-index:5;
         // display: none;///////////
         min-width:150vw;
-        max-width:0;
+        // max-width:0;
         background: #111;
         top:0;
         right:-15%;
@@ -55,7 +58,7 @@
     }
 ////////////////////////content//////////////
 //___________vr section___________________
-  .main-content-wrapper{
+    .main-content-wrapper{
                         padding-right : 4%;
                         align-items : center;
                         .vr-section-wrapper{
@@ -76,10 +79,11 @@
                     }
 ///•••••••••••••••••••••••••••••••••••///
 //____our categories sections__________
-.our-section-creations-wrapper{
+    .our-section-creations-wrapper{
                                 position: relative;
                                 // border : 5px solid orangered;
                                 min-width : 100%;
+
                                 ///See All bouton
                                 button{
                                         position : absolute;
@@ -87,6 +91,7 @@
                                         left : 50%;
                                         transform: translateX(-55%);
                                     }
+                                //////bloc our creation du bouton see All
                                 .our-creations-visit-options{
                                                             h3{
                                                                 width:100%;
@@ -94,13 +99,14 @@
                                                                 // border:3px solid crimson;
                                                             }
                                                         }
-                            
+                            ///////correspond à la grille d'image///////
                                 .figures-categories-section{
                                                         flex-direction: column;
                                                         // padding: 0 !important;
                                                         height : 320vh;
                                                         justify-content: space-evenly !important;
                                                         
+                                                        ////toutes les figures
                                                         &>*{
                                                             min-width:100%;
                                                             height : 35.2vh;
@@ -118,45 +124,47 @@
                                                         }
                                                     }
                                 }
-
-
-
 /////////////////footer///////////@function
- footer:nth-child(n){
-     margin-top : 25vh;
-     padding: 7% ;
-     height : 85vh;
-     flex-direction: column ;
-     flex-wrap: nowrap;
-     align-items: center;
-     justify-content: space-around;
-     & >*{
-            order:4;
-        }
-     & > *:first-child{
-                        width : 40%;
-                        max-height :5%;
-                        margin-bottom: 9%;
-                        order:1;
-                    }
-     &> *:nth-child(2){
-                        order:3;
-                        justify-content: space-between !important;
-                        width : 46%;
-                        padding:0;
+    footer:nth-child(n){
+            margin-top : 30vh;
+            padding: 7% ;
+            min-height : 90vh;
+            flex-direction: column ;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-around;
+            //tous les enfants directs
+            & >*{
+                   order:4;
+               }
+           //logo
+            & > *:first-child{
+                               width : 100px;
+                               max-height :20px;
+                               margin-bottom: 9%;
+                               order:1;
+                           }
+             ///média              
+            &> *:nth-child(2){
+                               order:3;
+                               justify-content: space-between !important;
+                               width : 46%;
+                               padding:0;
+            
+                           }
+             ///liens de navigations du footer              
+            &>*:nth-child(3){
+                               order:1;
+                               flex-direction: column;
+                               flex:4;
+                               justify-content: space-between !important;
 
-                    }
-     &>*:nth-child(3){
-                        order:1;
-                        flex-direction: column;
-                        flex:4;
-                        justify-content: space-between !important;
-         
-                    }
-     
-     li{
-            margin-bottom : 5% !important;
-        }
+                           }
+                       
+             ///correspond à tous les médias et tous les liens de navigation              
+            li{
+                   margin-bottom : 5% !important;
+               }
 
     }
 }

@@ -1,6 +1,10 @@
-@import'./mixin_lib.scss';
-@import './media.scss';
-@import'./fonts-set_up.scss';
+@import'./mixin_lib.scss';/*@Mixin utilitaire */
+@import './media.scss'; /*  @Média queris */
+@import'./fonts-set_up.scss';/*  feuille de style de fonts */
+/*
+        ************** PRINCIPALES STYLESHEET ****************
+
+*/
 
 html{
     font-size: 62.5%;
@@ -10,6 +14,9 @@ body{
     padding: 0;
     overflow-x: hidden;
     color : white;
+}
+*{
+    box-sizing : border-box;
 }
 
 .banner{
